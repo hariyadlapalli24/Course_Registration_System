@@ -1,4 +1,4 @@
-# ABC University — Course Registration System
+# Malla Reddy University — Course Registration System
 
 A full-stack course registration app:
 
