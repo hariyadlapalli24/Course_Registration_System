@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root {
+  --color-ink: #1C2541;
+  --color-ink-soft: #34405f;
+  --color-parchment: #F1EEE2;
+  --color-parchment-dark: #E4DFCF;
+  --color-gold: #B98B32;
+  --color-gold-soft: #DDBB78;
+  --color-charcoal: #2B2B28;
+  --color-success-bg: #E3EEE4;
+  --color-success-text: #2F5C3F;
+  --color-error-bg: #F6E4E1;
+  --color-error-text: #8C3327;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --radius: 4px;
+  --shadow-card: 0 12px 30px rgba(28, 37, 65, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { min-height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-parchment);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  margin: 0 0 0.5em;
+}
+
+.page-shell {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 2rem;
+  background: var(--color-ink);
+  border-bottom: 3px solid var(--color-gold);
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.site-header__crest {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-gold-soft);
+  color: var(--color-gold-soft);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.site-header__actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius);
+  border: 1.5px solid transparent;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 2px; }
+
+.btn--primary {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.btn--block { width: 100%; margin-top: 0.5rem; }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--color-parchment-dark);
+  margin-bottom: 2.5rem;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+}
+
+.hero__title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin-bottom: 0.75rem;
+}
+
+.hero__subtitle {
+  max-width: 46ch;
+  color: var(--color-ink-soft);
+  font-size: 1.05rem;
+}
+
+/* ---------- Auth cards / forms ---------- */
+
+.auth-card {
+  max-width: 440px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--color-parchment-dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 2.25rem;
+}
+
+.auth-card__hint {
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  margin-top: -0.3rem;
+  margin-bottom: 1.25rem;
+}
+
+.auth-card__footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.auth-card__footer a { color: var(--color-ink); font-weight: 600; }
+
+.form-field {
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.form-field input {
+  padding: 0.65rem 0.75rem;
+  border: 1.5px solid var(--color-parchment-dark);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--color-parchment);
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  background: #fff;
+}
+
+.form-field__error {
+  color: var(--color-error-text);
+  font-size: 0.8rem;
+}
+
+/* ---------- Alerts ---------- */
+
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.alert--success { background: var(--color-success-bg); color: var(--color-success-text); }
+.alert--error { background: var(--color-error-bg); color: var(--color-error-text); }
+
+/* ---------- ID / matriculation card ---------- */
+
+.id-card {
+  display: flex;
+  gap: 1.5rem;
+  background: var(--color-ink);
+  color: #fff;
+  border-radius: 8px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 2rem;
+}
+
+.id-card__crest {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--color-gold-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  color: var(--color-gold-soft);
+}
+
+.id-card__label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--color-gold-soft);
+  margin: 0 0 0.25rem;
+}
+
+.id-card__body h2 { color: #fff; margin-bottom: 0.75rem; }
+
+.id-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.id-card__details dt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.id-card__details dd {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+.dashboard-actions { margin-top: 1.5rem; }
+
+/* ---------- Course catalog ---------- */
+
+.page-subtitle {
+  color: var(--color-ink-soft);
+  margin-bottom: 1.5rem;
+}
+
+.course-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  border-top: 1px solid var(--color-parchment-dark);
+}
+
+.course-list__item { border-bottom: 1px solid var(--color-parchment-dark); }
+
+.course-list__item label {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: baseline;
+  gap: 0.4rem 0.9rem;
+  padding: 0.9rem 0.25rem;
+  cursor: pointer;
+}
+
+.course-list__code {
+  font-family: var(--font-mono);
+  color: var(--color-gold);
+  font-size: 0.85rem;
+}
+
+.course-list__name { font-weight: 600; color: var(--color-ink); }
+
+.course-list__description {
+  grid-column: 2 / -1;
+  color: var(--color-ink-soft);
+  font-size: 0.88rem;
+}
+
+/* ---------- Admin tables ---------- */
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+.admin-table th, .admin-table td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--color-parchment-dark);
+}
+
+.admin-table th {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-soft);
+}
+
+.admin-table__actions {
+  display: flex;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.admin-table__input {
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--color-gold-soft);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+}
+
+.admin-table__input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+.btn--small {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.btn--danger {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+  border-color: var(--color-error-text);
+}
+
+/* .btn--ghost on a light background (e.g. inside admin-table, not the dark
+   header) needs dark text/border instead of the header's white variant. */
+.admin-table .btn--ghost {
+  border-color: var(--color-ink-soft);
+  color: var(--color-ink-soft);
+}
+
+.loading-text { color: var(--color-ink-soft); }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .site-header { padding: 1rem; flex-wrap: wrap; gap: 0.75rem; }
+  .auth-card { padding: 1.5rem; }
+  .id-card { flex-direction: column; }
+  .course-list__item label { grid-template-columns: auto 1fr; }
+  .course-list__description { grid-column: 1 / -1; }
+}
