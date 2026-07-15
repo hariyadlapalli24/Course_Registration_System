@@ -86,9 +86,9 @@ REACT_APP_API_BASE_URL=http://localhost:8080/api
 
 ## 5. Using the app
 
-1. Go to `http://localhost:3000` → click **Register** → create a student account.
+1. Go to `http://localhost:3000` → click **Register** → create a User account.
 2. Click **Login** with that email/password → you land on the **Dashboard**,
-   showing your name, department, and roll number.
+   showing your name,email, department, and roll number.
 3. Click **Enroll for course registration** → check the courses you want →
    **Register** → see "Registration successful."
 4. To see the admin side, log in with the seeded admin account above — you're
@@ -139,9 +139,3 @@ backend, and it won't work across multiple backend instances without a
 shared store (e.g. Redis) — perfectly fine for local development or a
 single-instance deployment, but worth knowing if you later scale this out.
 
-## Extending this later
-
-- Swap `TokenStore`/`TokenAuthenticationFilter` for JWTs or Spring Session —
-  `SecurityConfig`'s `authorizeHttpRequests` rules don't need to change.
-- Add password-reset, email verification, or refresh tokens in `UserService`.
-- Add course capacity limits or prerequisites in `EnrollmentService`.
