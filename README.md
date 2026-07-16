@@ -1,4 +1,10 @@
 # Malla Reddy University — Course Registration System
+#Team :
+
+- Y. Hari
+- V. Karthik
+- Y. Karthik Reddy
+- Y. Vishnu Vardhan
 
 A full-stack course registration app:
 
