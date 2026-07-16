@@ -1,5 +1,5 @@
 # Malla Reddy University — Course Registration System
-#Team :
+Team :
 
 - Y. Hari
 - V. Karthik
