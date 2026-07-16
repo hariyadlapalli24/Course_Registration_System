@@ -140,6 +140,29 @@ rest of the app:
   seeded by `DataSeeder` on first run, or (b) an existing admin calling
   `POST /api/admin/admins` — itself behind the same `hasRole("ADMIN")` rule.
 
+  ## Data Model
+
+*User* (table: users)
+- id — bigint, primary key, auto-increment
+- name — varchar(255)
+- email — varchar(255), unique
+- password — varchar(255)
+- role — enum(USER, ADMIN)
+- roll_number — varchar(255), unique
+- department — varchar(255)
+
+*Course* (table: courses)
+- id — bigint, primary key, auto-increment
+- course_code — varchar(255), unique
+- course_name — varchar(255)
+- description — varchar(1000), nullable
+
+*Enrollment* (table: enrollments) — join table between User and Course
+- id — bigint, primary key, auto-increment
+- user_id — bigint, foreign key → users.id
+- course_id — bigint, foreign key → courses.id
+- enrolled_at — datetime(6)
+
 Note: the token store is in-memory, so tokens reset if you restart the
 backend, and it won't work across multiple backend instances without a
 shared store (e.g. Redis) — perfectly fine for local development or a
